@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elitecosmetics
+  namespace: dev-elitecosmetics
+  labels:
+    app: elitesosmetics
+    owner: sumi
+spec:
+  selector:
+    matchLabels:
+      app: elitesosmetics
+  template:
+    metadata:
+      labels:
+        app: elitesosmetics
+    spec:
+      containers:
+        - name: elitecosmetics
+          image: sumi2058/elitecosmetics:v1.0.0
+          ports:
+            - containerPort: 8000
